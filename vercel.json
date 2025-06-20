@@ -1,0 +1,24 @@
+{
+  "name": "blendguard-ai",
+  "version": 2,
+  "builds": [
+    {
+      "src": "blend-ui/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "blend-ui/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "blend-ui/pages/api/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+} 
